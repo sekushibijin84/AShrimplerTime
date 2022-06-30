@@ -5,7 +5,7 @@ This project is for a group of friends to learn new technologies and learn from 
  
 * So that Luke can continue on his quest to design the internet.
  
-* To help Liz learn PHP and who will most likely be wearing pink while doing it.
+* To help Liz learn about WordPress and who will most likely be wearing pink while doing it.
  
 * So Sarah can start programming with her present and always ready attitude.
  
