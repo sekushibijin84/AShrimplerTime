@@ -5649,7 +5649,10 @@ class PodsAPI {
 	 * @return array List of changed fields (if $mode = 'get')
 	 */
 	public static function handle_changed_fields( $pod, $id, $mode = 'set' ) {
-		$watch_changed_fields = (int) pods_get_setting( 'watch_changed_fields' );
+		$first_pods_version = get_option( 'pods_framework_version_first' );
+		$first_pods_version = '' === $first_pods_version ? PODS_VERSION : $first_pods_version;
+
+		$watch_changed_fields = (int) pods_get_setting( 'watch_changed_fields', version_compare( $first_pods_version, '2.8.21', '<=' ) ? 1 : 0 );
 
 		// Only continue if changed fields are watched.
 		if ( 0 === $watch_changed_fields ) {
@@ -10560,6 +10563,7 @@ class PodsAPI {
 	 * @since 2.0.0
 	 */
 	public function process_form( $params, $obj = null, $fields = null, $thank_you = null ) {
+		$old_display_errors = $this->display_errors;
 
 		$this->display_errors = false;
 
@@ -10639,6 +10643,8 @@ class PodsAPI {
 				pods_redirect( $thank_you, 302, false );
 			}
 		}
+
+		$this->display_errors = $old_display_errors;
 
 		return $id;
 	}
