@@ -1,7 +1,7 @@
 # A-Shrimpler-Time
 
 
-Start by installing Docker & Github etc..
+Start by installing Docker 
 
 view via:
 http://localhost
