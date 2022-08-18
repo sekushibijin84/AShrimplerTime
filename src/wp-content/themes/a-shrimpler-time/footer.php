@@ -13,17 +13,28 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'a-shrimpler-time' ) ); ?>">
+			<span>A Shrimpler Time</span>
+			<br></br>
+		
+			<a href="<?php echo esc_url( __( 'http://localhost/about-us/', 'AboutUs' ) ); ?>">
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
+				/* About Us link */
+				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				?>
+			</a>
+			<a href="<?php echo esc_url( __( 'http://localhost/contact-us/', 'ContactUs' ) ); ?>">
+				<?php
+				/* Contact Us Link. */
+				printf( esc_html__( 'Contact Us' ), 'contactUs' );
+				?>
+			</a>
+			<a href="<?php echo esc_url( __( 'http://localhost/?page_id=3', 'Privacy Policy' ) ); ?>">
+				<?php
+				/* Privacy Policy link */
 				printf( esc_html__( 'Proudly powered by %s', 'a-shrimpler-time' ), 'WordPress' );
 				?>
 			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'a-shrimpler-time' ), 'a-shrimpler-time', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+		
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
