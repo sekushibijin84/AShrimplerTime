@@ -27,3 +27,12 @@ http://localhost:8080
 login and PW are wordpress
 
 ** Whenever you pull: be sure to check if the SLQ file has changed. If it has, be sure to re-import the database **
+
+
+````
+
+If you make a change to the database:
+Sign in to the database
+go to the export tab
+export the file
+then replace the wordpress.sql file with the newly downloaded one
