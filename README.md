@@ -26,4 +26,16 @@ access database via:
 http://localhost:8080
 login and PW are wordpress
 
+
+
+
+````
+
+If you make a change to the database:
+Sign in to the database
+go to the export tab
+export the file
+then replace the wordpress.sql file with the newly downloaded one
+
 ** Whenever you pull: be sure to check if the SQL file has changed. If it has, be sure to re-import the database **
+

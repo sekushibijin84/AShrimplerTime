@@ -28,13 +28,7 @@
 				printf( esc_html__( 'Contact Us' ), 'contactUs' );
 				?>
 			</a>
-			<a href="<?php echo esc_url( __( 'http://localhost/?page_id=3', 'Privacy Policy' ) ); ?>">
-				<?php
-				/* Privacy Policy link */
-				printf( esc_html__( 'Proudly powered by %s', 'a-shrimpler-time' ), 'WordPress' );
-				?>
-			</a>
-		
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
