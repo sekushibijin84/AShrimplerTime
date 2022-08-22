@@ -176,3 +176,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* calling custom post type */
+function fish_custom_post_type() {
+    register_post_type('fish',
+        array(
+            'labels'      => array(
+                'name'          => __('fish-sticks', 'textdomain'),
+                'singular_name' => __('fish', 'textdomain'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+			
+        )
+    );
+}
+add_action('init', 'fish_custom_post_type');
+
+//add_shortcode( 'fishcode', 'fish_func' );
+// function fish_func( $atts ) {
+
+
+	
+//     return echo("hi");
+// }
