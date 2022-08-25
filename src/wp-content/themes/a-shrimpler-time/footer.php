@@ -16,13 +16,14 @@
 			<span>A Shrimpler Time</span>
 			<br></br>
 		
-			<a href="<?php echo esc_url( __( 'http://localhost/about-us/', 'AboutUs' ) ); ?>">
+			<a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
 				<?php
 				/* About Us link */
 				printf( esc_html__( 'About Us' ), 'AboutUs' );
 				?>
 			</a>
-			<a href="<?php echo esc_url( __( 'http://localhost/contact-us/', 'ContactUs' ) ); ?>">
+			
+			<a href="<?php echo esc_url( __( '/contact-us/', 'ContactUs' ) ); ?>">
 				<?php
 				/* Contact Us Link. */
 				printf( esc_html__( 'Contact Us' ), 'contactUs' );

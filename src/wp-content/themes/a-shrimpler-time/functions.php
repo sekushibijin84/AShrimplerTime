@@ -192,10 +192,29 @@ function fish_custom_post_type() {
 }
 add_action('init', 'fish_custom_post_type');
 
-//add_shortcode( 'fishcode', 'fish_func' );
-// function fish_func( $atts ) {
 
-
+// fish API call
+add_shortcode( 'fishcode', 'fish_func' );
+function fish_func( $atts ) {
+	$service_url = 'https://www.fishwatch.gov/api/species';
 	
-//     return echo("hi");
-// }
+	$curl = curl_init($service_url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	$curl_response = curl_exec($curl);
+	if ($curl_response === false) {
+		$info = curl_getinfo($curl);
+		curl_close($curl);
+		die('error occured during curl exec. Additioanl info: ' . var_export($info));
+	}
+	curl_close($curl);
+	$decoded = json_decode($curl_response);
+	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
+		die('error occured: ' . $decoded->response->errormessage);
+	}
+	echo 'response ok!';
+	var_export($decoded->response);
+     
+	
+    return $response;
+}
+
