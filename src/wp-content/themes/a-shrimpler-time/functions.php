@@ -194,9 +194,9 @@ add_action('init', 'fish_custom_post_type');
 
 
 // fish API call
-add_shortcode( 'fishcode', 'fish_func' );
+
 function fish_func( $atts ) {
-	$service_url = 'https://www.fishwatch.gov/api/species';
+	$service_url = 'https://www.fishwatch.gov/api/species/yellowtail-rockfish';
 	
 	$curl = curl_init($service_url);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -212,9 +212,8 @@ function fish_func( $atts ) {
 		die('error occured: ' . $decoded->response->errormessage);
 	}
 	echo 'response ok!';
-	var_export($decoded->response);
-     
+    $response;
 	
-    return $response;
+   
 }
-
+add_shortcode( 'fishcode', 'fish_func' );

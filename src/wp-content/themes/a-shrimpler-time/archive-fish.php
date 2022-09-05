@@ -26,7 +26,7 @@ get_header();
 			while ( have_posts() ) :
 				?> Pete and repeat Are in a boat... <?php
 				the_post();
-				echo($response);
+			
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -44,9 +44,15 @@ get_header();
 
 		endif;
 		?>
+<?php ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL); 
+echo(fish_func([]));
+?>
+  
   <section>
+   
  <h1>Crimson Jobfish</h1>
-
  <h5>Physical Description:</h5>
  <ul>
 	<li>Crimson jobfish have skin that is slightly brown with some brighter colors when caught over hard bottoms.</li>
@@ -61,7 +67,7 @@ get_header();
  
  <a href="<?php echo esc_url( __( '/fish/red-fish/', 'single-fish' ) ); ?>">
 				<?php
-				/* About Us link */
+				/* Crimson Jobfish link */
 				printf( esc_html__( 'Click for more information about this fish' ), 'single-fish' );
 				?>
 			</a>
@@ -80,10 +86,10 @@ get_header();
 <p>At recommended levels.</p>
 <img src="https://origin-east-01-drupal-fishwatch.woc.noaa.gov/sites/default/files/Rockfish_Yellowtail_NB_W.png" alt="Yellowtail Rockfish",
 			   title="Yellowtail Rockfish"></img>
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
+			   <a href="<?php echo esc_url( __( '/fish/yellowtail/', 'yellowtail-fish' ) ); ?>">
 				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				/* Yellowtail Rockfish link */
+				printf( esc_html__( 'Click for more information about this fish' ), 'yellowtail-fish' );
 				?>
 			</a>
   </section>
@@ -102,10 +108,10 @@ get_header();
 <p>At recommended levels.</p>
 <img src="https://origin-east-01-drupal-fishwatch.woc.noaa.gov/sites/default/files/Lobster_American_NB_Web.png" alt="American Lobster",
 			   title="American Lobster"></img>
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
+			   <a href="<?php echo esc_url( __( '/fish/lobster/', 'lobster-fish' ) ); ?>">
 				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				/* American Lobster link */
+				printf( esc_html__( 'Click for more information about this fish' ), 'lobster-fish' );
 				?>
 			</a>
   </section>
@@ -121,22 +127,14 @@ get_header();
 <p>Summer and fall.</p>
 <img src="https://origin-east-01-drupal-fishwatch.woc.noaa.gov/sites/default/files/Squid_Illex_NB_W.png" alt="shortfin squid",
 			   title="Shortfin Squid"></img>
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
+			   <a href="<?php echo esc_url( __( '/fish/shortfin/', 'shortfin-fish' ) ); ?>">
 				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				/* Shortfin Squid link */
+				printf( esc_html__( 'Click for more information about this fish' ), 'shortfin-fish' );
 				?>
 			</a>
   </section>
-  <section>
 
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
-				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
-				?>
-			</a>
-  </section>
   <section>
   <h1>Atlantic Shortfin Mako Shark</h1>
 
@@ -150,10 +148,10 @@ get_header();
 <p>Retention limit of zero in place to end overfishing.</p>
 <img src="https://origin-east-01-drupal-fishwatch.woc.noaa.gov/sites/default/files/atlantic_common_thresher_shark_0.png" alt="White hake in a tank at the New England Aquarium",
 			   title="White hake at New England Aquarium. Photo credit: Stephen Luk"></img>
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
+			   <a href="<?php echo esc_url( __( '/fish/shark/', 'shark-fish' ) ); ?>">
 				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				/* Atlantic Shortfin Mako Shark link */
+				printf( esc_html__( 'Click for more information about this fish' ), 'shark-fish' );
 				?>
 			</a>
   </section>
@@ -170,10 +168,10 @@ get_header();
 <p>At recommended levels in the South Atlantic and the Gulf of Mexico.</p>
 <img src="https://origin-east-01-drupal-fishwatch.woc.noaa.gov/sites/default/files/king_mackerel.png" alt="Illustration of King Mackarel",
 			   title="King Mackarel"></img>
-  <a href="<?php echo esc_url( __( '/about-us/', 'AboutUs' ) ); ?>">
+			   <a href="<?php echo esc_url( __( '/fish/mackarel/', 'mackarel-fish' ) ); ?>">
 				<?php
-				/* About Us link */
-				printf( esc_html__( 'About Us' ), 'AboutUs' );
+				/* King Mackerel link */
+				printf( esc_html__( 'Click for more information about this fish' ), 'mackarel-fish' );
 				?>
 			</a>
   </section>

@@ -47,6 +47,14 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'a-shrimpler-time' ); ?></button>
+			<a href="<?php echo esc_url( __( '/fish/', 'fish' ) ); ?>">
+				<?php
+				/* Contact Us Link. */
+				printf( esc_html__( 'Fish' ), 'fish' );
+				?>
+			</a>
+			
+			
 			<?php
 			wp_nav_menu(
 				array(
