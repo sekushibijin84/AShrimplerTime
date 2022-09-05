@@ -176,3 +176,44 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* calling custom post type */
+function fish_custom_post_type() {
+    register_post_type('fish',
+        array(
+            'labels'      => array(
+                'name'          => __('fish-sticks', 'textdomain'),
+                'singular_name' => __('fish', 'textdomain'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+			
+        )
+    );
+}
+add_action('init', 'fish_custom_post_type');
+
+
+// fish API call
+
+function fish_func( $atts ) {
+	$service_url = 'https://www.fishwatch.gov/api/species/yellowtail-rockfish';
+	
+	$curl = curl_init($service_url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	$curl_response = curl_exec($curl);
+	if ($curl_response === false) {
+		$info = curl_getinfo($curl);
+		curl_close($curl);
+		die('error occured during curl exec. Additioanl info: ' . var_export($info));
+	}
+	curl_close($curl);
+	$decoded = json_decode($curl_response);
+	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
+		die('error occured: ' . $decoded->response->errormessage);
+	}
+	echo 'response ok!';
+    $response;
+	
+   
+}
+add_shortcode( 'fishcode', 'fish_func' );
